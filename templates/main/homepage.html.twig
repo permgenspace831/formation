@@ -2,4 +2,16 @@
 
 {% block page_content %}
     <h1>Homepage</h1>
+
+    {{ dump() }}
+
+    {# Disclaimer: !Demo purpose only! #}
+    {# Display Query parameters from Request #}
+    {# path: /id=5&name=toto #}
+    <div>
+        {{ app.request.requestUri }}
+    </div>
+    {% for parameter_name, some_value in app.request.query.all %}
+        <p>{{ parameter_name }} => {{ some_value }}</p>
+    {% endfor %}
 {% endblock %}
