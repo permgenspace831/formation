@@ -3,17 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {# Solution #1: using the manifest.json file #}
+            {#<link rel="stylesheet" href="{{ asset('build/app.css') }}">#}
+
+            {# Solution #2: using the entrypoints.json file #}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body>
         {% block body %}
-            <nav></nav>
+            {{ include('_includes/menu.html.twig') }}
             <main>
                 {% block page_content %}
                 {% endblock %}
             </main>
 
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>
