@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block page_content %}
+    <h1>
+        {{ app.flashes('info')|join(' ') }}
+    </h1>
+
+    <div>
+        <a href="{{ path('homepage') }}">Retour à la page d'accueil</a>
+    </div>
+{% endblock %}
+

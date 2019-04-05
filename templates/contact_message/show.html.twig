@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block page_content %}
+    <h1>Message {{ message.id }}</h1>
+
+    <p>
+        {{ message.content }}
+    </p>
+
+    <p>Envoyé par {{ message.senderName }} ({{ message.senderEmail }})</p>
+{% endblock %}
