@@ -28,7 +28,7 @@ class ContactHandler
         $this->recipient = $recipient;
 
         // On demande un LoggerInterface et on reçoit un Logger. *cheers*
-        dump($logger);
+//        dump($logger);
 
         $this->objectManager = $objectManager;
     }
